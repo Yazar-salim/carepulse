@@ -230,9 +230,17 @@ const Doctor = () => {
                 .map((obj, i) => (
                   <tr key={i}>
                     <td>{i + 1}</td>
-                    <td>{obj.appointmentDate}</td>
+                    <td  style={{
+                        padding: "10px",
+                        textAlign: "right",
+                        paddingRight: "12%",
+                      }}>{obj.appointmentDate}</td>
                     <td>{obj.patientName}</td>
-                    <td>{obj.appointmentTime}</td>
+                    <td  style={{
+                        padding: "10px",
+                        textAlign: "right",
+                        paddingRight: "12%",
+                      }}>{obj.appointmentTime}</td>
                     <td>
                       {obj.status == null ? (
                         <span style={{ color: "#d14d06", fontWeight: "800" }}>

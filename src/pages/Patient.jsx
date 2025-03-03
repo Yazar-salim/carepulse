@@ -12,11 +12,11 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import dashboardlogo from "../assets/Patientdashboardimage.png";
 import profileicon from "../assets/profileicon.svg";
-import editprof from "../assets/edit.svg";
+import editprof from "../assets/Edit.svg";
 import Header from "../components/Header";
 import newappointment from "../assets/NewAppointment.svg";
 import toast from "react-hot-toast";
-import  { useRef } from "react";
+import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 
 const Patient = () => {
@@ -236,11 +236,7 @@ const Patient = () => {
 
               <div className="d-flex align-items-center">
                 <div style={{ position: "absolute", left: "-3%", top: "26%" }}>
-                  <img
-                    src={profileicon}
-                    alt=""
-                    style={{ width: "120px" }}
-                  />
+                  <img src={profileicon} alt="" style={{ width: "120px" }} />
                 </div>
 
                 <div
@@ -339,25 +335,39 @@ const Patient = () => {
                 <Table hover size="sm" responsive>
                   <thead>
                     <tr>
-                      <th style={{ backgroundColor: "#9153b0", color: "white" }}>
+                      <th
+                        style={{ backgroundColor: "#9153b0", color: "white" }}
+                      >
                         Sl no
                       </th>
-                      <th style={{ backgroundColor: "#9153b0", color: "white" }}>
+                      <th
+                        style={{ backgroundColor: "#9153b0", color: "white" }}
+                      >
                         Appointment Date
                       </th>
-                      <th style={{ backgroundColor: "#9153b0", color: "white" }}>
+                      <th
+                        style={{ backgroundColor: "#9153b0", color: "white" }}
+                      >
                         Doctor Name
                       </th>
-                      <th style={{ backgroundColor: "#9153b0", color: "white" }}>
+                      <th
+                        style={{ backgroundColor: "#9153b0", color: "white" }}
+                      >
                         Department
                       </th>
-                      <th style={{ backgroundColor: "#9153b0", color: "white" }}>
+                      <th
+                        style={{ backgroundColor: "#9153b0", color: "white" }}
+                      >
                         Appointment Time
                       </th>
-                      <th style={{ backgroundColor: "#9153b0", color: "white" }}>
+                      <th
+                        style={{ backgroundColor: "#9153b0", color: "white" }}
+                      >
                         Appointment Status
                       </th>
-                      <th style={{ backgroundColor: "#9153b0", color: "white" }}>
+                      <th
+                        style={{ backgroundColor: "#9153b0", color: "white" }}
+                      >
                         Action
                       </th>
                     </tr>
@@ -371,10 +381,27 @@ const Patient = () => {
                       .map((obj, i) => (
                         <tr key={i}>
                           <td>{i + 1}</td>
-                          <td>{obj.appointmentDate}</td>
+                          <td
+                            style={{
+                              padding: "10px",
+                              textAlign: "right",
+                              paddingRight: "12%",
+                              width:"20%"
+                            }}
+                          >
+                            {obj.appointmentDate}
+                          </td>
                           <td>{obj.doctorname}</td>
                           <td>{obj.doctorSpecialty}</td>
-                          <td>{obj.appointmentTime}</td>
+                          <td
+                            style={{
+                              padding: "10px",
+                              textAlign: "right",
+                              paddingRight: "12%",
+                            }}
+                          >
+                            {obj.appointmentTime}
+                          </td>
                           <td>
                             {obj.status == null ? (
                               <span
@@ -392,9 +419,7 @@ const Patient = () => {
                                 Accepted
                               </span>
                             ) : (
-                              <span
-                                style={{ color: "red", fontWeight: "800" }}
-                              >
+                              <span style={{ color: "red", fontWeight: "800" }}>
                                 Rejected
                               </span>
                             )}
